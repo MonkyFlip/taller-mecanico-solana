@@ -17,7 +17,7 @@
   "postCreateCommand": "cd web && npm install && cd ../api && npm install",
 
   "remoteEnv": {
-    "PATH": "${containerEnv:PATH}:/home/vscode/.local/share/solana/install/active_release/bin:/home/vscode/.avm/bin"
+    "PATH": "${containerEnv:PATH}:${containerEnv:HOME}/.local/share/solana/install/active_release/bin:${containerEnv:HOME}/.avm/bin"
   },
 
   "customizations": {
@@ -25,7 +25,7 @@
       "settings": {
         "editor.formatOnSave": true,
         "terminal.integrated.env.linux": {
-          "PATH": "${env:PATH}:/home/vscode/.local/share/solana/install/active_release/bin:/home/vscode/.avm/bin"
+          "PATH": "${env:PATH}:${env:HOME}/.local/share/solana/install/active_release/bin:${env:HOME}/.avm/bin"
         }
       }
     }
