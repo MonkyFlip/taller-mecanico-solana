@@ -24,3 +24,4 @@ test-wallet.json
 # OS
 .DS_Store
 Thumbs.db
+api/solana.tar.bz2
