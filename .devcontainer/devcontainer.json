@@ -1,0 +1,53 @@
+{
+  "name": "Taller Mecanico - Solana Dev",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    },
+    "ghcr.io/devcontainers/features/rust:1": {
+      "version": "1.75",
+      "profile": "default"
+    }
+  },
+
+  "onCreateCommand": "bash .devcontainer/install.sh",
+
+  "postCreateCommand": "cd web && npm install && cd ../api && npm install",
+
+  "remoteEnv": {
+    "PATH": "${containerEnv:PATH}:/home/vscode/.local/share/solana/install/active_release/bin:/home/vscode/.avm/bin"
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "rust-lang.rust-analyzer",
+        "bradlc.vscode-tailwindcss",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "tamasfe.even-better-toml",
+        "serayuzgur.crates"
+      ],
+      "settings": {
+        "rust-analyzer.cargo.features": "all",
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "[rust]": {
+          "editor.defaultFormatter": "rust-lang.rust-analyzer"
+        },
+        "terminal.integrated.env.linux": {
+          "PATH": "${env:PATH}:/home/vscode/.local/share/solana/install/active_release/bin:/home/vscode/.avm/bin"
+        }
+      }
+    }
+  },
+
+  "forwardPorts": [3000, 8899, 8900],
+  "portsAttributes": {
+    "3000": { "label": "Next.js Frontend" },
+    "8899": { "label": "Solana Validator RPC" },
+    "8900": { "label": "Solana Validator WS" }
+  }
+}
