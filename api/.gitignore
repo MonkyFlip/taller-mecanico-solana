@@ -1,0 +1,18 @@
+# Rust build artifacts
+target/
+
+# Node dependencies
+node_modules/
+.anchor/
+
+# Llaves generadas localmente (nunca versionar)
+.payer-keypair.json
+test-wallet.json
+
+# Ambiente
+.env
+
+# IDL y tipos generados automaticamente por anchor build
+# (incluir en .gitignore solo si se regeneran en CI)
+# target/idl/
+# target/types/

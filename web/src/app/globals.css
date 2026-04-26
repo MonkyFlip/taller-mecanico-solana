@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------------------------------------------------
+ * Base
+ * ---------------------------------------------------------------------------*/
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0a0b;
+  color: #e8e8ed;
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------------------------------------------------------------------------
+ * Solana Wallet Adapter overrides
+ * ---------------------------------------------------------------------------*/
+
+.wallet-adapter-button {
+  background-color: #1f1f23 !important;
+  border: 1px solid #2e2e34 !important;
+  border-radius: 6px !important;
+  color: #e8e8ed !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  height: 36px !important;
+  padding: 0 14px !important;
+  transition: all 0.15s ease !important;
+}
+
+.wallet-adapter-button:hover {
+  background-color: #27272c !important;
+  border-color: #3f3f47 !important;
+}
+
+.wallet-adapter-button-trigger {
+  background-color: #f97316 !important;
+  border-color: transparent !important;
+  color: white !important;
+}
+
+.wallet-adapter-button-trigger:hover {
+  background-color: #ea6c0a !important;
+}
+
+.wallet-adapter-modal-wrapper {
+  background-color: #111113 !important;
+  border: 1px solid #2e2e34 !important;
+  border-radius: 12px !important;
+}
+
+.wallet-adapter-modal-title {
+  color: #e8e8ed !important;
+  font-family: 'DM Sans', sans-serif !important;
+}
+
+.wallet-adapter-modal-list li {
+  border-color: #2e2e34 !important;
+}
+
+.wallet-adapter-modal-list-more {
+  color: #9898a6 !important;
+}
+
+/* ---------------------------------------------------------------------------
+ * Scrollbar personalizado
+ * ---------------------------------------------------------------------------*/
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111113;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2e2e34;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f47;
+}
+
+/* ---------------------------------------------------------------------------
+ * Utilidades de animacion
+ * ---------------------------------------------------------------------------*/
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+  animation: fade-in 0.15s ease-out;
+}
